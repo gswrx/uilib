@@ -1,6 +1,6 @@
 {
-  "name": "uilib",
-  "version": "0.0.0",
+  "name": "gswrx-uilib",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
