@@ -1,15 +1,25 @@
 {
   "name": "gswrx-uilib",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "keywords" :["Angular","Library", "Component"],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/gswrx/uilib"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "copy-readme": "copy .\\README.md .\\dist\\uilib",
+    "copy-files": "npm run copy-readme",
+    "build-lib": "ng build uilib",
+    "npm-pack": "cd dist/uilib && npm pack",
+    "package": "npm run build-lib && npm run copy-files && npm run npm-pack" 
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~8.2.5",
     "@angular/common": "~8.2.5",

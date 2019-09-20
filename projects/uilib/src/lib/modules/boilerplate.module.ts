@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BoilerplateComponent } from '../../components/boilerplate/boilerplate.component';
+import { BoilerplateComponent } from '../components/boilerplate/boilerplate.component';
 
 
 
