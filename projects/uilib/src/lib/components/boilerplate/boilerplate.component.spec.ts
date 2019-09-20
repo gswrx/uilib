@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UilibComponent } from './uilib.component';
+import { BoilerplateComponent } from './boilerplate.component';
 
-describe('UilibComponent', () => {
-  let component: UilibComponent;
-  let fixture: ComponentFixture<UilibComponent>;
+describe('BoilerplateComponent', () => {
+  let component: BoilerplateComponent;
+  let fixture: ComponentFixture<BoilerplateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UilibComponent ]
+      declarations: [ BoilerplateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UilibComponent);
+    fixture = TestBed.createComponent(BoilerplateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

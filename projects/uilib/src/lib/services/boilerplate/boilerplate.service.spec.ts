@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UilibService } from './uilib.service';
+import { BoilerplateService } from './boilerplate.service';
 
-describe('UilibService', () => {
+describe('BoilerplateService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UilibService = TestBed.get(UilibService);
+    const service: BoilerplateService = TestBed.get(BoilerplateService);
     expect(service).toBeTruthy();
   });
 });
