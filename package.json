@@ -1,6 +1,6 @@
 {
   "name": "gswrx-uilib",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "keywords" :["Angular","Library", "Component"],
   "repository": {
     "type" : "git",
@@ -17,7 +17,8 @@
     "copy-files": "npm run copy-readme",
     "build-lib": "ng build uilib",
     "npm-pack": "cd dist/uilib && npm pack",
-    "package": "npm run build-lib && npm run copy-files && npm run npm-pack" 
+    "publish-tar": "cd dist/uilib && npm publish",
+    "package": "npm run build-lib && npm run copy-files && npm run npm-pack && npm run publish-tar"
   },
   "private": false,
   "dependencies": {
