@@ -5,5 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class BoilerplateService {
 
-  constructor() { }
+  constructor() { 
+  
+  }
+
+  public stub(): void {
+    console.log("Service stub called!");
+  }
 }
