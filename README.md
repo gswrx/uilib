@@ -37,7 +37,6 @@ To run the specified unit tests, run `ng test uilib`
 # Components
 Reserved for a list of existing components in this library and their corresponding documentation
 
-
 # To do
 - Integrate github hooks into the deployment proces
 - Integrate CI into the deployment proces

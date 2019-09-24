@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BoilerplateService } from '../../services/boilerplate/boilerplate.service';
 
 /**
- * test
+ * This class is merely a shell for testing purposes while developing and should never be used in a real environment
  */
 @Component({
   selector: 'gswrx-boilerplate',
