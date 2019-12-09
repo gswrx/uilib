@@ -1,0 +1,4 @@
+    <input hidden matInput [min]="min" [max]="now" [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker [dateClass]="dateClass" [calendarHeaderComponent]="customHeader" touchUi #picker></mat-datepicker>
+    <button *ngIf="this.formattedStart && this.formattedEnd" mat-raised-button (click)="picker.open()">{{this.formattedStart}} / {{this.formattedEnd}}</button>
+    <button *ngIf="!this.formattedStart || !this.formattedEnd" mat-raised-button (click)="picker.open()">Geen datum geselecteerd</button>

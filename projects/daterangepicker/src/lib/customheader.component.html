@@ -1,0 +1,18 @@
+<div class="dates">
+    <span>{{startFormatted || 'Start datum'}}</span> 
+    <mat-icon>arrow_right</mat-icon>
+    <span>{{endFormatted || 'Eind datum'}}</span>
+</div>
+<div class="center">
+    <small *ngIf="daysBetween">Dagen: {{daysBetween}}</small>
+    <small *ngIf="!daysBetween">Geselecteerde dagen</small>
+</div>
+<div class="wrapper">
+    <button (click)="previousClicked('month')" mat-icon-button aria-label="Example icon-button with a heart icon">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <span>{{periodLabel}}</span>
+    <button (click)="nextClicked('month')" mat-icon-button aria-label="Example icon-button with a heart icon">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+</div>

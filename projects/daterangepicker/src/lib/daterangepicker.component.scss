@@ -1,0 +1,12 @@
+::ng-deep .selected-days-between {
+    background-color: pink !important;
+    border-radius:0%;
+}
+::ng-deep .selected-days-start {
+    background-color: #c2185b !important;
+    border-radius:100% 0 0 100%;
+}
+::ng-deep .selected-days-end {
+    background-color: #c2185b !important;
+    border-radius:0 100% 100% 0;
+}   
