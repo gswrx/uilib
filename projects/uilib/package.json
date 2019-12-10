@@ -3,6 +3,9 @@
   "version": "0.0.7",
   "peerDependencies": {
     "@angular/common": "^8.2.7",
-    "@angular/core": "^8.2.7"
+    "@angular/core": "^8.2.7",
+    "@angular/material": "^8.2.3",
+    "@angular/material-moment-adapter": "^8.2.3",
+    "moment": "^2.24.0"
   }
 }
