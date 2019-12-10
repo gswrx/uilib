@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { DaterangepickerComponent } from './daterangepicker.component';
-import { MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatInputModule, MatIconModule, MatButtonModule, MatSelectModule } from '@angular/material';
 import { CustomHeader } from './customheader.component';
 import { CommonModule } from '@angular/common';
 
@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
     MatNativeDateModule,
     MatInputModule,
     MatIconModule,
+    MatSelectModule,
     MatButtonModule,
     CommonModule
   ],

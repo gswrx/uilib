@@ -32,28 +32,35 @@ import { DaterangepickerService } from './daterangepicker.service';
           .pipe(takeUntil(this._destroyed))
           .subscribe(() => cdr.markForCheck());
           _calendar.selectedChange.subscribe( res => {
-        if (this.start == null) {
-            this.daterangeService.setStartDate(res);
+        if (this.start == null || this.start.isAfter(res)) {
+            daterangeService.setStartDate(res);
+            cdr.detectChanges();
             daterangeService.setMin(res);
-            this.daysBetween = moment(this.end).diff(res, 'days');
+            daterangeService.setDaysBetween(moment(this.end).diff(res, 'days'));
         } else if (this.start != null && this.end == null) {
             this.daterangeService.setEndDate(res);
+            cdr.detectChanges();
+
             this.daterangeService.clearMin();
-            this.daysBetween = res.diff(this.start, 'days');
+            daterangeService.setDaysBetween(res.diff(this.start, 'days'));
         } else {
           this.daterangeService.setStartDate(moment(res));
           daterangeService.setMin(res);
+          cdr.detectChanges();
+
           this.daterangeService.clearEndDate();
-          this.daysBetween = moment(res).diff(this.start, 'days');
+          daterangeService.setDaysBetween(moment(res).diff(this.start, 'days'));
         }
     });
           _calendar._userSelected = () => {
           
         };
+        
     }
 
     ngOnInit() {
-      this.daterangeService.getStartDate().subscribe (startDate => {
+      this.daterangeService.getStartDate().subscribe(startDate => {
+        // console.log('hi');
         this.start = startDate;
         if (this.start) {
           this.startFormatted = this.start.format('MMM DD, YYYY');
@@ -66,9 +73,12 @@ import { DaterangepickerService } from './daterangepicker.service';
           this.endFormatted = this.end.format('MMM DD, YYYY');
 
         }
-
+      });
+      this.daterangeService.getDaysBetween().subscribe (daysBetween => {
+        this.daysBetween = daysBetween;
       });
     }
+    
     ngOnDestroy() {
       this._destroyed.next();
       this._destroyed.complete();

@@ -1,4 +1,15 @@
-    <input hidden matInput [min]="min" [max]="now" [matDatepicker]="picker" placeholder="Choose a date">
+    <input hidden matInput [max]="now" [matDatepicker]="picker" placeholder="Choose a date">
     <mat-datepicker [dateClass]="dateClass" [calendarHeaderComponent]="customHeader" touchUi #picker></mat-datepicker>
-    <button *ngIf="this.formattedStart && this.formattedEnd" mat-raised-button (click)="picker.open()">{{this.formattedStart}} / {{this.formattedEnd}}</button>
-    <button *ngIf="!this.formattedStart || !this.formattedEnd" mat-raised-button (click)="picker.open()">Geen datum geselecteerd</button>
+    <!-- <button *ngIf="this.formattedStart && this.formattedEnd" mat-raised-button (click)="picker.open()">{{this.formattedStart}} / {{this.formattedEnd}}</button> -->
+    <!-- <button *ngIf="!this.formattedStart || !this.formattedEnd" mat-raised-button (click)="picker.open()">Geen datum geselecteerd</button> -->
+    <mat-form-field>
+        <mat-label>Selecteer een datum</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option value="today">Vandaag</mat-option>
+          <mat-option value="yesterday">Gisteren</mat-option>
+          <mat-option value="this_month">Deze maand</mat-option>
+          <mat-option value="last_month">Vorige maand</mat-option>
+          <mat-option (click)="picker.open()" value="custom">Eigen selectie</mat-option>
+        </mat-select>
+      </mat-form-field>
+      {{this.formattedStart}} / {{this.formattedEnd}}

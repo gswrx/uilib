@@ -24,6 +24,8 @@ const moment = _moment;
 export class DaterangepickerComponent implements OnInit {
   customHeader = CustomHeader;
   now = moment();
+  selected = 'today';
+
   min = null;
   start: _moment.Moment;
   @Output() dateSelected = new EventEmitter<any>();
@@ -33,7 +35,6 @@ export class DaterangepickerComponent implements OnInit {
   formattedStart;
 
   ngOnInit() {
-    // this.now = moment;
     this.daterangeService.getMin().subscribe( min => {
       this.min = min;
     });
@@ -48,6 +49,8 @@ export class DaterangepickerComponent implements OnInit {
         this.formattedStart = this.start.format('DD MMM, YYYY');
       }
 
+      this.now = moment();
+
     });
     this.daterangeService.getEndDate().subscribe(endDate => {
 
@@ -60,6 +63,8 @@ export class DaterangepickerComponent implements OnInit {
       if (this.end) {
         this.formattedEnd = this.end.format('DD MMM, YYYY');
       }
+      this.now = moment();
+
     });
   }
 
@@ -71,15 +76,13 @@ export class DaterangepickerComponent implements OnInit {
     if (isStart && this.end) {
       return 'selected-days-start mat-calendar-body-selected';
     } else if (isBetween && this.end) {
+
       return 'selected-days-between';
     } else if (isEnd && this.end) {
+
       return 'selected-days-end';
     }
     return undefined;
-    if (this.start && this.end) {
-      return isBetween || isStart || isEnd && this.end ? 'selected-days' : undefined;
-    }
-
   }
 
 }

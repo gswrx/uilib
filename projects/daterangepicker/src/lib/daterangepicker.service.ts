@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
 import { Moment } from 'moment';
 
 @Injectable({
@@ -8,12 +8,22 @@ import { Moment } from 'moment';
 export class DaterangepickerService {
 
   private min = new Subject<Moment>();
-  private startDate = new Subject<Moment>();
-  private endDate = new Subject<Moment>();
+  private startDate = new BehaviorSubject<Moment>(null);
+  private endDate = new BehaviorSubject<Moment>(null);
+  private daysBetween = new BehaviorSubject<number>(null);
+
 
 
   setMin(date: any) {
       this.min.next(date);
+  }
+
+  setDaysBetween(days: number) {
+    this.daysBetween.next(days);
+  }
+
+  getDaysBetween() {
+    return this.daysBetween.asObservable();
   }
 
   clearMin() {
@@ -29,7 +39,7 @@ export class DaterangepickerService {
 }
 
 clearStartDate() {
-    this.startDate.next();
+    this.startDate.next(null);
 }
 
 getStartDate(): Observable<any> {
@@ -41,7 +51,7 @@ setEndDate(date: any) {
 }
 
 clearEndDate() {
-  this.endDate.next();
+  this.endDate.next(null);
 }
 
 getEndDate(): Observable<any> {
